@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obras — Neoplasticismo</title>
+  <meta name="description" content="Una galería de las obras más icónicas del movimiento De Stijl, desde la pintura hasta la arquitectura.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="logo-simbolo" aria-hidden="true"></span>
+        <strong>Neoplasticismo</strong>
+      </a>
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="visually-hidden">Menú</span>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+      <nav class="nav" id="primary-navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="filosofia.html" class="nav__link">Filosofía</a></li>
+          <li class="nav__item"><a href="principios.html" class="nav__link">Principios</a></li>
+          <li class="nav__item"><a href="figuras.html" class="nav__link">Figuras</a></li>
+          <li class="nav__item"><a href="obras.html" class="nav__link" aria-current="page">Obras</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-obras">
+      <div class="container">
+        <div class="hero__text">
+          <h1 class="hero__title">Obras Destacadas</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="gallery-grid">
+        <a href="img/obra-01.jpg" class="gallery-item">
+          <img src="img/obra-01.jpg" alt="Nombre de la Obra 1" class="gallery-image">
+          <figcaption>Composición en Rojo, Amarillo, Azul y Negro - Piet Mondrian (1930)</figcaption>
+        </a>
+        <a href="img/obra-02.jpg" class="gallery-item">
+          <img src="img/obra-02.jpg" alt="Nombre de la Obra 2" class="gallery-image">
+          <figcaption>Silla Roja y Azul - Gerrit Rietveld (1918)</figcaption>
+        </a>
+        <a href="img/obra-03.jpg" class="gallery-item">
+          <img src="img/obra-03.jpg" alt="Nombre de la Obra 3" class="gallery-image">
+          <figcaption>Casa Schröder - Gerrit Rietveld (1918)</figcaption>
+        </a>
+        <a href="img/obra-04.jpg" class="gallery-item">
+          <img src="img/obra-04.jpg" alt="Nombre de la Obra 4" class="gallery-image">
+          <figcaption>Composición con rojo y azul - Piet Mondrian (1933)</figcaption>
+        </a>
+        <a href="img/obra-05.jpg" class="gallery-item">
+          <img src="img/obra-05.jpg" alt="Nombre de la Obra 5" class="gallery-image">
+          <figcaption>Tableau 1 - Piet Mondrian (1924)</figcaption>
+        </a>
+        <a href="img/obra-06.jpg" class="gallery-item">
+          <img src="img/obra-06.jpg" alt="Nombre de la Obra 6" class="gallery-image">
+          <figcaption>Composicion en vidrio - Piet Mondrian (1923)</figcaption>
+        </a>
+        <a href="img/obra-07.jpg" class="gallery-item">
+          <img src="img/obra-07.jpg" alt="Nombre de la Obra 7" class="gallery-image">
+          <figcaption>Composición II (1922)</figcaption>
+        </a>
+        <a href="img/obra-08.jpg" class="gallery-item">
+          <img src="img/obra-08.jpg" alt="Nombre de la Obra 8" class="gallery-image">
+          <figcaption>Broadway Boogie Woogie (1942-43)</figcaption>
+        </a>
+        <a href="img/obra-09.jpg" class="gallery-item">
+          <img src="img/obra-09.jpg" alt="Nombre de la Obra 9" class="gallery-image">
+          <figcaption>Contracomposicion XIII - Theo van Doesburg (1921)</figcaption>
+        </a>
+        <a href="img/obra-10.jpg" class="gallery-item">
+          <img src="img/obra-10.jpg" alt="Nombre de la Obra 10" class="gallery-image">
+          <figcaption>Composición en Ovalo con planos de color - Piet Mondrian (1914)</figcaption>
+        </a>
+        <a href="img/obra-11.jpg" class="gallery-item">
+          <img src="img/obra-11.jpg" alt="Nombre de la Obra 11" class="gallery-image">
+          <figcaption>Cafe de Unie - Theo van Doesburg (1924)</figcaption>
+        </a>
+        <a href="img/obra-12.jpg" class="gallery-item">
+          <img src="img/obra-12.jpg" alt="Nombre de la Obra 12" class="gallery-image">
+          <figcaption>Victory Boogie Woogie - Piet Mondrian (1944)</figcaption>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Neoplasticismo — Juan Bautista Arzani — 2025</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" style="display: none;">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="lightbox-caption"></div>
+  </div>
+
+</body>
+</html>

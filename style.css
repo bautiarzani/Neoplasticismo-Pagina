@@ -1,0 +1,591 @@
+/*
+  Tabla de Contenidos
+  -------------------
+  1. Estilo Global y Variables
+  2. Clases de Utilidad (ej. visually-hidden)
+  3. Header (barra superior)
+  4. Hero (bloque principal)
+  5. Tarjetas de Acceso
+  6. Ramas y Géneros Artísticos
+  7. Footer
+  8. Estados, Accesibilidad y Motion
+  9. Responsive (Media Queries)
+*/
+
+/* 1. Estilo Global y Variables
+-------------------------------------------------- */
+:root{
+  --negro: #111;
+  --gris: #E6E6E6;
+  --gris-osc: #2B2B2B;
+  --gris-calido: #F0F1EF;
+  --rojo: #C62828;
+  --amarillo: #E5B700;
+  --azul: #1F4E8C;
+  --blanco: #ffffff;
+  --texto-gris: #666;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{scroll-behavior:smooth}
+
+body {
+  color: var(--negro);
+  background: #F7F7F7;
+  line-height: 1.5;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+section {
+  padding-block: 40px;
+}
+
+img, .logo-simbolo, .reticula {
+  display: block;
+  max-width: 100%;
+}
+
+/* 2. Clases de Utilidad
+-------------------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 8. Estados, Accesibilidad y Motion
+-------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  .card, .btn-primario, .btn-secundario, .btn-ghost, .nav-toggle .bar {
+    transition: all .25s ease-in-out;
+  }
+}
+
+a:focus-visible, button:focus-visible, .card:focus-visible {
+  outline: 3px solid var(--negro);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* 3. Header (barra superior)
+-------------------------------------------------- */
+.site-header {
+  /* Fondo blanco con 60% de opacidad y desenfoque para el contenido detrás */
+  background: rgba(233, 233, 233, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Para Safari */
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-block: 16px; /* Aumentado de 12px */
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--negro);
+  font-weight: 700;
+}
+
+.logo-simbolo {
+  width: 32px;
+  height: 32px;
+  background: var(--amarillo);
+  box-shadow: inset 12px 0 0 var(--azul), inset 0 12px 0 var(--rojo);
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 20;
+}
+
+.nav-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background: var(--negro);
+  border-radius: 10px;
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  /* Quitamos el fondo para que no se duplique con el del header */
+  background: transparent;
+}
+
+.nav.is-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--negro);
+  font-weight: 500;
+}
+
+.nav__link[aria-current="page"] {
+  font-weight: 700;
+}
+
+/* 4. Hero (bloque principal)
+-------------------------------------------------- */
+.hero {
+  background: var(--blanco);
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.hero__lead {
+  margin-bottom: 24px;
+  max-width: 60ch;
+  font-size: 1.125rem; /* 18px */
+  text-align: justify;
+}
+
+.hero__text {
+  /* El texto se alinea a la izquierda por defecto */
+}
+
+.hero__content-wrapper {
+  display: flex;
+  align-items: center;
+  padding-inline: 16px;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 360px;
+}
+
+.btn-primario {
+  display: inline-block;
+  background: var(--amarillo);
+  color: var(--negro);
+  border-radius: 999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+}
+
+.btn-primario:hover {
+  filter: brightness(0.95);
+}
+
+/* Hero específico para las subpáginas (Filosofía, Principios, Figuras, Obras) */
+.hero-principios, .hero-figuras, .hero-obras, .hero-filosofia {
+  background-size: cover;
+  background-position: center;
+  color: var(--blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  padding-block: 64px;
+}
+
+.hero-principios .hero__text, .hero-figuras .hero__text, .hero-obras .hero__text, .hero-filosofia .hero__text {
+  text-align: center;
+}
+
+.hero-principios {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/fondo-hero-principios.jpg');
+}
+.hero-figuras {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/fondo-hero-figuras.jpg');
+}
+.hero-obras {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/fondo-hero-obras.jpg');
+}
+.hero-filosofia {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/fondo-hero-filosofia.jpg');
+}
+
+/* 5. Tarjetas de Acceso
+-------------------------------------------------- */
+.accesos {
+  background: var(--gris-calido);
+}
+
+.accesos__grid {
+  display: grid;
+  gap: 28px;
+}
+
+.card {
+  min-height: 240px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  overflow: hidden;
+  background: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--negro);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+.card__image {
+  width: 100%;
+  height: 150px; /* Altura fija para la imagen en la tarjeta */
+  object-fit: cover;
+}
+
+.card__media {
+  height: 120px;
+  border-bottom: 4px solid var(--negro);
+}
+
+.card__media--rojo { background-color: var(--rojo); }
+.card__media--azul { background-color: var(--azul); }
+.card__media--amarillo { background-color: var(--amarillo); }
+
+
+.card__body {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.btn-secundario {
+  align-self: flex-start;
+  background: var(--gris);
+  color: var(--negro);
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-secundario:hover {
+  background: #ddd;
+}
+
+/* 6. Ramas y Géneros Artísticos
+-------------------------------------------------- */
+.ramas {
+  background: var(--negro);
+  color: var(--blanco);
+}
+
+.ramas__title {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: clamp(24px, 5vw, 36px);
+}
+
+.ramas-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.rama {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  font-size: clamp(18px, 2.4vw, 28px);
+  font-weight: 700;
+  text-align: center;
+  padding: 16px;
+  border: 10px solid var(--negro);
+}
+
+.rama--pintura, .rama--mobiliario { background: var(--gris); color: var(--negro); }
+.rama--arquitectura { background: var(--azul); color: var(--blanco); }
+.rama--grafico { background: var(--amarillo); color: var(--negro); }
+.rama--urbanismo { background: var(--rojo); color: var(--blanco); }
+
+.ramas-grid .rama:last-child {
+  grid-column: 1 / -1;
+}
+
+.ramas__cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.btn-ghost {
+  display: inline-block;
+  border: 2px solid var(--blanco);
+  color: var(--blanco);
+  background: transparent;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 7. Footer
+-------------------------------------------------- */
+.site-footer {
+  background: var(--blanco);
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+  color: var(--texto-gris);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Estilos para la Galería (obras.html) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.gallery-item {
+  text-decoration: none;
+  color: var(--negro);
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border: 4px solid var(--negro);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+.gallery-item figcaption {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  font-size: 14px;
+}
+
+/* Estilos para Biografías de Artistas (figuras.html) */
+.artist-bio {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+  padding-block: 32px;
+}
+
+.artist-bio:not(:last-child) {
+  border-bottom: 1px solid var(--gris);
+}
+
+.artist-bio__image {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Asegura que la imagen sea cuadrada */
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: top; /* Muestra la parte superior de la imagen */
+}
+
+.artist-bio__name {
+  font-size: clamp(28px, 5vw, 36px);
+  margin-bottom: 16px;
+}
+
+.artist-bio__text p {
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1.125rem; /* 18px */
+}
+
+/* Estilos para el Lightbox */
+.lightbox {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 9. Responsive
+-------------------------------------------------- */
+@media (min-width: 768px) {
+  section {
+    padding-block: 64px;
+  }
+
+  /* Hacemos que el contenedor del header se alinee a la izquierda */
+  .site-header .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 4vw;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+    position: static;
+    border: none;
+  }
+
+  .nav.is-open {
+    padding: 0;
+  }
+
+  .nav__list {
+    flex-direction: row;
+  }
+
+  .hero {
+    grid-template-columns: 50% 50%;
+    gap: 48px;
+    padding-block: 0; /* Remove vertical padding on desktop */
+  }
+
+  .hero__content-wrapper {
+    /* Restauramos el padding izquierdo para que no se pegue al borde */
+    padding-left: 4vw;
+  }
+
+  .hero-principios,
+  .hero-figuras,
+  .hero-obras,
+  .hero-filosofia {
+    grid-template-columns: 1fr; /* Anula el grid de 2 columnas del hero general */
+    padding-block: 120px;
+  }
+
+  .accesos__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artist-bio {
+    grid-template-columns: 300px 1fr;
+    gap: 48px;
+    padding-block: 48px;
+  }
+
+  .ramas-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .ramas-grid .rama:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .accesos__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

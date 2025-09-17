@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neoplasticismo — Orden, retícula y color primario</title>
+  <meta name="description" content="El Neoplasticismo propone un lenguaje universal basado en líneas rectas, equilibrio asimétrico y la fuerza de los colores primarios.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="logo-simbolo" aria-hidden="true"></span>
+        <strong>Neoplasticismo</strong>
+      </a>
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="visually-hidden">Menú</span>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+      <nav class="nav" id="primary-navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="filosofia.html" class="nav__link">Filosofía</a></li>
+          <li class="nav__item"><a href="principios.html" class="nav__link">Principios</a></li>
+          <li class="nav__item"><a href="figuras.html" class="nav__link">Figuras</a></li>
+          <li class="nav__item"><a href="obras.html" class="nav__link">Obras</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero__content-wrapper">
+        <div class="hero__text">
+          <h1 class="hero__title">Orden, retícula y color primario</h1>
+          <p class="hero__lead">El Neoplasticismo propone un lenguaje universal basado en líneas rectas, equilibrio asimétrico y la fuerza de los colores primarios.</p>
+          <a href="filosofia.html" class="btn-primario hero__cta">Filosofía</a>
+        </div>
+      </div>
+      <img src="img/home-hero.jpg" alt="Composición abstracta neoplástica" class="hero__image">
+    </section>
+
+    <!-- Tarjetas de acceso (Principios y Figuras) -->
+    <section id="principios" class="accesos">
+      <div class="container">
+        <h2 class="visually-hidden">Accesos Principales</h2>
+        <div class="accesos__grid">
+          <a href="principios.html" class="card">
+            <img src="img/card-principios.jpg" alt="Ilustración abstracta sobre los principios del neoplasticismo" class="card__image">
+            <div class="card__body">
+              <h3 class="card__title">Principios</h3>
+              <span class="btn-secundario">Ver Mas</span>
+            </div>
+          </a>
+          <a href="figuras.html" class="card">
+            <img src="img/card-figuras.jpg" alt="Retrato estilizado de una figura clave del movimiento" class="card__image">
+            <div class="card__body">
+              <h3 class="card__title">Figuras</h3>
+              <span class="btn-secundario">Ver Mas</span>
+            </div>
+          </a>
+          <a href="obras.html" class="card">
+            <img src="img/card-obras.jpg" alt="Collage de obras neoplásticas" class="card__image">
+            <div class="card__body">
+              <h3 class="card__title">Obras y Ramas</h3>
+              <span class="btn-secundario">Ver Mas</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ramas y géneros artísticos -->
+    <section id="ramas" class="ramas">
+      <div class="container">
+        <h2 class="ramas__title">Ramas y géneros artísticos</h2>
+        <div class="ramas-grid">
+          <div class="rama rama--pintura">Pintura</div>
+          <div class="rama rama--arquitectura">Arquitectura</div>
+          <div class="rama rama--grafico">Diseño Gráfico</div>
+          <div class="rama rama--urbanismo">Urbanismo</div>
+          <div class="rama rama--mobiliario">Diseño de Mobiliario</div>
+        </div>
+        <div class="ramas__cta">
+          <a href="ramas.html" class="btn-ghost">Más información</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Neoplasticismo — Juan Bautista Arzani — 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>
