@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Neoplasticismo</title>
+  <meta name="description" content="Ponte en contacto para más información sobre el Neoplasticismo.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="logo-simbolo" aria-hidden="true"></span>
+        <strong>Neoplasticismo</strong>
+      </a>
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="visually-hidden">Menú</span>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+      <nav class="nav" id="primary-navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="filosofia.html" class="nav__link">Filosofía</a></li>
+          <li class="nav__item"><a href="principios.html" class="nav__link">Principios</a></li>
+          <li class="nav__item"><a href="figuras.html" class="nav__link">Figuras</a></li>
+          <li class="nav__item"><a href="obras.html" class="nav__link">Obras</a></li>
+          <li class="nav__item"><a href="contacto.html" class="nav__link" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-contacto">
+      <div class="container">
+        <div class="hero__text">
+          <h1 class="hero__title">Contacto</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="contact-form-wrapper">
+        <p class="hero__lead" style="text-align: center; max-width: 60ch; margin-bottom: 40px;">¿Tienes alguna pregunta o comentario? Rellena el formulario y me pondré en contacto contigo.</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn-primario" style="width: 100%;">Enviar Mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Neoplasticismo — Juan Bautista Arzani — 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>
