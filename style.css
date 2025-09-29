@@ -245,8 +245,8 @@ a:focus-visible, button:focus-visible, .card:focus-visible {
   filter: brightness(0.95);
 }
 
-/* Hero específico para las subpáginas (Filosofía, Principios, Figuras, Obras) */
-.hero-principios, .hero-figuras, .hero-obras, .hero-filosofia {
+/* Hero específico para las subpáginas */
+.hero-principios, .hero-figuras, .hero-obras, .hero-filosofia, .hero-ramas {
   background-size: cover;
   background-position: center;
   color: var(--blanco);
@@ -257,7 +257,7 @@ a:focus-visible, button:focus-visible, .card:focus-visible {
   padding-block: 64px;
 }
 
-.hero-principios .hero__text, .hero-figuras .hero__text, .hero-obras .hero__text, .hero-filosofia .hero__text {
+.hero-principios .hero__text, .hero-figuras .hero__text, .hero-obras .hero__text, .hero-filosofia .hero__text, .hero-ramas .hero__text {
   text-align: center;
 }
 
@@ -273,8 +273,8 @@ a:focus-visible, button:focus-visible, .card:focus-visible {
 .hero-filosofia {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/fondo-hero-filosofia.jpg');
 }
-.hero-contacto {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/fondo-hero-contacto.jpg');
+.hero-ramas {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/fondo-hero-ramas.jpg');
 }
 
 /* 5. Tarjetas de Acceso
@@ -491,8 +491,54 @@ a:focus-visible, button:focus-visible, .card:focus-visible {
   margin-top: 1.5em; /* Añade espacio entre párrafos */
 }
 
+/* Estilos para contenido de texto en páginas (principios.html) */
+.text-content-wrapper {
+  max-width: 90ch;
+  margin-inline: auto;
+}
 
-/* Estilos para Formulario de Contacto (contacto.html) */
+.text-content-wrapper .hero__lead {
+  max-width: none; /* Anula el max-width por defecto de hero__lead */
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+.content-image {
+  margin-block: 48px 72px; /* Aumentado el margen inferior a 72px */
+  border: 4px solid var(--negro);
+  max-width: 450px; /* Limita el ancho máximo de la imagen */
+  margin-inline: auto; /* Centra la imagen si el contenedor es más ancho */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.content-image img {
+  display: block;
+  width: 100%;
+}
+
+.content-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+.content-image figcaption {
+  background: var(--blanco);
+  padding: 12px;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--texto-gris);
+}
+
+/* Página de Contacto */
+.contact-page {
+  text-align: center;
+}
+
+.contact-page .hero__lead {
+  margin-inline: auto; /* Centra el párrafo */
+}
+
 .contact-form-wrapper {
   max-width: 700px;
   margin-inline: auto;
@@ -507,6 +553,7 @@ a:focus-visible, button:focus-visible, .card:focus-visible {
 }
 
 .form-label {
+  text-align: center;
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
@@ -604,7 +651,7 @@ a:focus-visible, button:focus-visible, .card:focus-visible {
   .hero-figuras,
   .hero-obras,
   .hero-filosofia,
-  .hero-contacto {
+  .hero-ramas {
     grid-template-columns: 1fr; /* Anula el grid de 2 columnas del hero general */
     padding-block: 120px;
   }
